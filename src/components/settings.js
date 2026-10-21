@@ -5,7 +5,7 @@
 const STORAGE_KEY = 'vn-ui-kit:settings';
 
 export const defaults = {
-  lang: 'ja',
+  lang: 'en', // language shown on a first visit
   textScale: 1,
   textSpeed: 3, // 1 = slow ... 5 = instant
   theme: 'default',

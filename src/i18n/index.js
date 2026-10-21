@@ -8,10 +8,10 @@ const getLocales = () => (locales ??= { ja, en, pt, pseudo: buildPseudo(en) });
 // Which HTML lang attribute each locale uses (pseudo is English underneath)
 const htmlLang = { ja: 'ja', en: 'en', pt: 'pt', pseudo: 'en' };
 
-let current = 'ja';
+let current = 'en';
 
 export function setLang(lang) {
-  current = getLocales()[lang] ? lang : 'ja';
+  current = getLocales()[lang] ? lang : 'en'; // unknown language → English
   document.documentElement.lang = htmlLang[current];
   document.documentElement.dataset.locale = current;
 }
