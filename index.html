@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Moongirl was in love with the ocean</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=M+PLUS+1+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Shared sparkle shape, reused with <use href="#sparkle"> -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="sparkle" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 0C12.9 8.4 15.6 11.1 24 12 15.6 12.9 12.9 15.6 12 24 11.1 15.6 8.4 12.9 0 12 8.4 11.1 11.1 8.4 12 0Z" />
+      </symbol>
+    </svg>
+
+    <main class="stage" id="stage">
+      <header class="toolbar">
+        <div class="toolbar__title">
+          <h1 id="game-title"></h1>
+          <!-- Decorative Japanese subtitle, hidden when the game itself is in Japanese -->
+          <p class="toolbar__subtitle" lang="ja" aria-hidden="true">月女は海に愛した</p>
+        </div>
+        <!-- Story progress: finished acts = dot, current act = sparkle, acts ahead = ring -->
+        <div class="progress" id="phases" role="img">
+          <span class="phase" data-phase="1"><svg><use href="#sparkle" /></svg></span>
+          <span class="phase" data-phase="2"><svg><use href="#sparkle" /></svg></span>
+          <span class="phase" data-phase="3"><svg><use href="#sparkle" /></svg></span>
+          <span class="phase" data-phase="4"><svg><use href="#sparkle" /></svg></span>
+        </div>
+        <div class="toolbar__actions">
+          <button class="icon-btn" id="music-btn" type="button" aria-pressed="false" data-i18n-aria="ui.music">
+            <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true">
+              <path fill="currentColor" d="M10 3h2v11.3a3.5 3.5 0 1 1-2-3.1V3Zm2 0c0 3 4.5 3.5 4.5 7.5 0 1.3-.4 2.4-1 3.2.2-.6.3-1.2.3-1.8C15.8 8.8 12 8.6 12 6.2V3Z" />
+            </svg>
+          </button>
+          <button class="icon-btn" id="settings-btn" type="button" data-i18n-aria="ui.settings">
+            <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true">
+              <path fill="currentColor" d="M19.4 13a7.5 7.5 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.6 7.6 0 0 0-1.7-1L15 3.5h-4l-.4 2.5a7.6 7.6 0 0 0-1.7 1l-2.4-1-2 3.4L6.6 11a7.5 7.5 0 0 0 0 2l-2 1.6 2 3.4 2.4-1c.5.4 1.1.7 1.7 1l.4 2.5h4l.4-2.5c.6-.3 1.2-.6 1.7-1l2.4 1 2-3.4-2-1.6ZM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" transform="translate(-1 0)" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <!-- Placeholder scene: sunset sky, moon, sea. Swap for your own art later. -->
+      <div class="scene-bg" aria-hidden="true">
+        <div class="scene-bg__moon"></div>
+        <div class="scene-bg__trail"></div>
+      </div>
+      <div class="bottom-band" aria-hidden="true"></div>
+
+      <!-- HUD: the choice menu sits on top of the dialogue box; both are anchored to the bottom,
+           so the menu never overlaps the box however tall the box gets -->
+      <div class="hud">
+      <!-- Choice menu (buttons filled by src/components/choices.js) -->
+      <div class="choices-wrap">
+        <p class="choices__label" data-i18n="ui.choose" aria-hidden="true"></p>
+        <div class="choices" id="choices" role="group" hidden></div>
+      </div>
+
+      <!-- Dialogue box component -->
+      <section class="dialogue" id="dialogue">
+        <div class="dialogue__nameplate" data-name></div>
+        <!-- Animated text is hidden from screen readers; the full line is announced once via the sr-only element -->
+        <p class="dialogue__text" data-text aria-hidden="true"></p>
+        <p class="sr-only" data-sr aria-live="polite"></p>
+        <p class="dialogue__hint" data-i18n="ui.advanceHint"></p>
+      </section>
+      </div>
+    </main>
+
+    <!-- Settings panel component -->
+    <dialog class="panel" id="settings" aria-labelledby="settings-title">
+      <form method="dialog" class="panel__body">
+        <h2 class="panel__title" id="settings-title" data-i18n="ui.settings"></h2>
+
+        <fieldset class="field">
+          <legend class="field__label" data-i18n="ui.language"></legend>
+          <div class="segmented">
+            <!-- Language names are always shown in their own language -->
+            <label><input type="radio" name="lang" value="ja" /><span lang="ja">日本語</span></label>
+            <label><input type="radio" name="lang" value="en" /><span lang="en">English</span></label>
+            <label><input type="radio" name="lang" value="pt" /><span lang="pt">Português</span></label>
+            <label><input type="radio" name="lang" value="pseudo" /><span lang="en">Pseudo (QA)</span></label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span class="field__label" data-i18n="ui.textSize"></span>
+          <input type="range" id="text-scale" min="0.85" max="1.5" step="0.05" />
+        </label>
+
+        <label class="field">
+          <span class="field__label" data-i18n="ui.textSpeed"></span>
+          <input type="range" id="text-speed" min="1" max="5" step="1" />
+        </label>
+
+        <fieldset class="field">
+  <legend class="field__label" data-i18n="ui.theme"></legend>
+  <div class="segmented">
+    <label><input type="radio" name="theme" value="default" /><span data-i18n="ui.themeDefault"></span></label>
+    <label><input type="radio" name="theme" value="sepia" /><span data-i18n="ui.themeSepia"></span></label>
+    <label><input type="radio" name="theme" value="contrast" /><span data-i18n="ui.highContrast"></span></label>
+  </div>
+</fieldset>
+
+        <label class="toggle">
+          <input type="checkbox" id="furigana" role="switch" />
+          <span data-i18n="ui.furigana"></span>
+        </label>
+
+        <button class="btn" value="close" data-i18n="ui.close"></button>
+      </form>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

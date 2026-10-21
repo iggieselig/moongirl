@@ -1,0 +1,66 @@
+{
+  "ui": {
+    "advanceHint": "Click or press enter....",
+    "settings": "Settings",
+    "language": "Language",
+    "textSize": "Text size",
+    "textSpeed": "Text speed",
+    "highContrast": "High contrast",
+    "furigana": "Show furigana (Japanese)",
+    "close": "Close",
+    "theme": "Theme",
+    "themeDefault": "Default",
+    "themeSepia": "Sepia",
+    "choose": "Choose",
+    "music": "Music",
+    "gameTitle": "Moongirl was in love with the ocean",
+    "progress": "Story progress:"
+  },
+  "names": {
+    "narrator": "",
+    "mio": "Mio",
+    "kai": "Kai",
+    "lala": "Lala",
+    "moongirl": "Moongirl"
+  },
+  "script": {
+    "l1": "A café at dusk. Outside the window, it has started to rain.",
+    "l2": "Hey, do you know whose umbrella this is?",
+    "l3": "No idea. But it's been sitting there for ages, hasn't it?",
+    "l4": "Want to try finding its owner?",
+    "l5": "This is a small story that begins with a single forgotten umbrella.",
+    "l6": "Mio and Kai are two friends who meet at a café on a rainy evening. As they sit by the window, they notice a forgotten umbrella and decide to find its owner, leading them on an unexpected adventure.",
+    "l7": "Lala joins them on their quest, bringing her own unique perspective to the adventure."
+  },
+  "mg": {
+    "title": "Moongirl was in love with the ocean",
+    "yes": "Yes",
+    "no": "No",
+    "playAgain": "Play again",
+    "s1": {
+      "intro": "Moongirl is staring at the ocean...",
+      "talk": "Talk to Moongirl?",
+      "cantHear": "She can't hear you.",
+      "callAgain": "Call her again?",
+      "walks": "She starts walking toward the sea.",
+      "reach": "You reach for Moongirl, but she starts walking toward the sea.",
+      "watch": "You watch as she walks toward the sea."
+    },
+    "s2": {
+      "follow": "Follow her?",
+      "swim": "It looks like she wants to take a swim. You could join her if you want.",
+      "stay": "You stay in the soft safety of the sand.",
+      "dissolve": "As Moongirl reaches the ocean, she starts dissolving into the water.",
+      "wave": "She uses her last breath to become a wave. It breaks on the shore and disappears.",
+      "alone": "You are alone."
+    },
+    "s3": {
+      "feet": "You both dip your feet in the water. You take a moment to look around.",
+      "wip": "(The exploration scene is coming soon.)"
+    },
+    "end": {
+      "gameOver": "— Game over —",
+      "toBeContinued": "— To be continued —"
+    }
+  }
+}

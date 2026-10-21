@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-latin);
+  font-size: var(--fs-md);
+  line-height: var(--lh);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Japanese: own font stack, strict kinsoku line breaking (no 。、 at line start) */
+:lang(ja) {
+  font-family: var(--font-ja);
+  line-break: strict;
+  word-break: normal;
+}
+
+/* Long words (German-style compounds, pseudo-locale strings) wrap instead of overflowing */
+p,
+span,
+legend,
+button {
+  overflow-wrap: anywhere;
+}
+
+/* Furigana */
+rt {
+  font-size: 0.5em;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.no-furigana rt {
+  display: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}

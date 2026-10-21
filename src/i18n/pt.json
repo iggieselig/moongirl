@@ -1,0 +1,65 @@
+{
+  "ui": {
+    "advanceHint": "Clique ou aperte enter....",
+    "settings": "Configurações",
+    "language": "Idioma",
+    "textSize": "Tamanho do texto",
+    "textSpeed": "Velocidade do texto",
+    "highContrast": "Alto contraste",
+    "furigana": "Mostrar furigana (japonês)",
+    "close": "Fechar",
+    "theme": "Tema",
+    "themeDefault": "Padrão",
+    "themeSepia": "Sépia",
+    "choose": "Escolha",
+    "music": "Música",
+    "gameTitle": "Moongirl era apaixonada pelo oceano",
+    "progress": "Progresso da história:"
+  },
+  "names": {
+    "narrator": "",
+    "mio": "Mio",
+    "kai": "Kai",
+    "moongirl": "Moongirl"
+  },
+  "script": {
+    "l1": "Um café ao entardecer. Lá fora, começou a chover.",
+    "l2": "Ei, você sabe de quem é este guarda-chuva?",
+    "l3": "Não faço ideia. Mas ele está aí faz tempo, né?",
+    "l4": "Bora tentar achar o dono?",
+    "l5": "Esta é uma pequena história que começa com um único guarda-chuva esquecido.",
+    "l6": "Mio e Kai são dois amigos que se encontram em um café em uma noite chuvosa. Enquanto se sentam perto da janela, eles notam um guarda-chuva esquecido e decidem encontrar seu dono, levando-os a uma aventura inesperada.",
+    "l7": "Lala se junta a eles em sua busca, trazendo sua própria perspectiva única para a aventura."
+  },
+  "mg": {
+    "title": "Moongirl era apaixonada pelo oceano",
+    "yes": "Sim",
+    "no": "Não",
+    "playAgain": "Jogar de novo",
+    "s1": {
+      "intro": "A Moongirl está olhando para o oceano...",
+      "talk": "Falar com a Moongirl?",
+      "cantHear": "Ela não consegue te ouvir.",
+      "callAgain": "Chamar ela de novo?",
+      "walks": "Ela começa a andar em direção ao mar.",
+      "reach": "Você estende a mão para a Moongirl, mas ela começa a andar em direção ao mar.",
+      "watch": "Você observa enquanto ela caminha em direção ao mar."
+    },
+    "s2": {
+      "follow": "Seguir ela?",
+      "swim": "Parece que ela quer nadar. Você pode ir junto, se quiser.",
+      "stay": "Você fica na segurança macia da areia.",
+      "dissolve": "Quando a Moongirl chega ao oceano, ela começa a se dissolver na água.",
+      "wave": "Ela usa o último suspiro para virar uma onda. A onda quebra na praia e desaparece.",
+      "alone": "Você está sozinha."
+    },
+    "s3": {
+      "feet": "Vocês duas molham os pés na água. Você aproveita o momento para olhar em volta.",
+      "wip": "(A cena de exploração vem em breve.)"
+    },
+    "end": {
+      "gameOver": "— Fim de jogo —",
+      "toBeContinued": "— Continua —"
+    }
+  }
+}
